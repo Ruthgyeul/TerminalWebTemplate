@@ -57,6 +57,7 @@ export function ErrorScreen({
         </dl>
 
         {/* Plain anchor on purpose: a full reload cleanly resets any error state. */}
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a
           href="/"
           className="mt-6 inline-block rounded-md border border-term-border bg-term-panel px-4 py-2.5 text-sm text-term-text hover:border-term-accent hover:text-term-accent"
