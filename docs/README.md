@@ -1,8 +1,10 @@
 # docs/
 
-AI and contributor guidance for **TerminalWebTemplate**. The root
-[`CLAUDE.md`](../CLAUDE.md) imports these so Claude Code loads them
-automatically — start here when extending the template.
+AI and contributor guidance for **TerminalWebTemplate**. **Every AI agent and
+contributor must read these in full before starting any work** — they are the
+source of truth for the project's architecture and conventions. The root
+[`CLAUDE.md`](../CLAUDE.md) imports them so Claude Code loads them automatically;
+other tools are pointed here by [`AGENTS.md`](../AGENTS.md).
 
 | Guide | Scope |
 | ----- | ----- |
