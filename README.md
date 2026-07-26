@@ -99,12 +99,15 @@ with `next start` (not a static export) to keep them.
 Branch, commit, PR and merge conventions live in
 [`CONTRIBUTING.md`](CONTRIBUTING.md). In short: branch off `main` as
 `feat/…`·`fix/…`·`docs/…`, use [Conventional Commits](https://www.conventionalcommits.org/),
-and squash-merge green PRs. Issue and PR templates are under `.github/`.
+and merge green PRs with a merge commit. Issue and PR templates are under `.github/`.
 
 ## Working with Claude Code
 
-This repo includes `CLAUDE.md` files (root, `src/`, `src/components/`) describing
-architecture and conventions so Claude Code has the context it needs. Start
+This repo keeps its AI/contributor guidance under [`docs/`](docs/) —
+[`claude-project.md`](docs/claude-project.md) (project-wide),
+[`claude-src.md`](docs/claude-src.md) (`src/`), and
+[`claude-components.md`](docs/claude-components.md) (`src/components/`). The root
+`CLAUDE.md` imports them so Claude Code loads the context automatically. Start
 there when extending the template.
 
 ## License

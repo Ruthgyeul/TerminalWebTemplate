@@ -1,4 +1,4 @@
-import { TERMINAL_HOST, TERMINAL_USER } from "@/config/siteConfig";
+import { PromptLabel } from "@/components/PromptLabel";
 
 /**
  * Route-level loading UI, shown by Next.js while a server component streams in.
@@ -8,10 +8,7 @@ export default function Loading() {
   return (
     <main className="terminal-bg flex min-h-screen items-center justify-center">
       <p className="text-sm text-term-muted">
-        <span className="text-term-green">
-          {TERMINAL_USER}@{TERMINAL_HOST}
-        </span>
-        <span className="text-term-faint">:~$</span> loading
+        <PromptLabel /> loading
         <span className="term-cursor ml-1 align-middle" aria-hidden />
       </p>
     </main>

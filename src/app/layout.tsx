@@ -12,6 +12,7 @@ import {
   AUTHOR_URL,
   THEME_COLOR,
 } from "@/config/siteConfig";
+import { toJsonLd } from "@/lib/utils";
 import "@/styles/globals.css";
 
 /**
@@ -112,7 +113,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-term-bg text-term-text antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(websiteJsonLd) }}
         />
         {children}
       </body>

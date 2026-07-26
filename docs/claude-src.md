@@ -1,7 +1,7 @@
 # src/ — source layout
 
-Scoped guidance for the application source. See the root `CLAUDE.md` for the
-project-wide picture.
+Scoped guidance for the application source. See
+[`claude-project.md`](claude-project.md) for the project-wide picture.
 
 ```
 src/
@@ -18,7 +18,7 @@ src/
 │   ├── manifest.ts      # /manifest.webmanifest (PWA)
 │   ├── opengraph-image.tsx  # /opengraph-image (dynamic)
 │   └── twitter-image.tsx    # /twitter-image (dynamic)
-├── components/          # reusable UI (see components/CLAUDE.md)
+├── components/          # reusable UI (see docs/claude-components.md)
 ├── config/
 │   └── siteConfig.ts    # ★ all env-driven site identity — single source
 ├── lib/

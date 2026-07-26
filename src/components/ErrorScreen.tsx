@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { TERMINAL_HOST, TERMINAL_USER } from "@/config/siteConfig";
+import { PromptLabel } from "@/components/PromptLabel";
 
 interface DetailRow {
   key: string;
@@ -33,10 +33,7 @@ export function ErrorScreen({
     <main className="terminal-bg flex min-h-screen flex-col items-center justify-center px-6 py-16">
       <div className="w-full max-w-lg">
         <p className="text-sm text-term-muted">
-          <span className="text-term-green">
-            {TERMINAL_USER}@{TERMINAL_HOST}
-          </span>
-          <span className="text-term-faint">:~$</span> {command}
+          <PromptLabel /> {command}
         </p>
 
         <p className={`mt-5 text-6xl font-bold leading-none ${codeClassName}`}>
