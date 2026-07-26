@@ -99,7 +99,7 @@ with `next start` (not a static export) to keep them.
 Branch, commit, PR and merge conventions live in
 [`CONTRIBUTING.md`](CONTRIBUTING.md). In short: branch off `main` as
 `feat/…`·`fix/…`·`docs/…`, use [Conventional Commits](https://www.conventionalcommits.org/),
-and squash-merge green PRs. Issue and PR templates are under `.github/`.
+and merge green PRs with a merge commit. Issue and PR templates are under `.github/`.
 
 ## Working with Claude Code
 

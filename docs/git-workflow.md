@@ -9,9 +9,9 @@ rulebook.
 
 We use **GitHub Flow** — a lightweight branching model where `main` is the
 single long-lived branch and every change lands through a short-lived branch and
-a squash-merged pull request. It fits a template repo: history stays linear,
-`main` is always releasable, and there's no `develop`/`release` bookkeeping to
-maintain.
+a **merge-committed** pull request. It fits a template repo: each PR keeps its
+own commits and records an explicit merge point, `main` is always releasable,
+and there's no `develop`/`release` bookkeeping to maintain.
 
 ```mermaid
 gitGraph
@@ -22,17 +22,18 @@ gitGraph
    commit id: "engine + tests"
    commit id: "/about route"
    checkout main
-   merge feat/interactive-terminal tag: "squash #10"
+   merge feat/interactive-terminal tag: "merge #10"
    branch fix/sitemap-lastmod
    checkout fix/sitemap-lastmod
    commit id: "patch"
    checkout main
-   merge fix/sitemap-lastmod tag: "squash #11"
+   merge fix/sitemap-lastmod tag: "merge #11"
 ```
 
-Each feature/fix branches off the latest `main`, and the PR is **squashed** back
-into `main` as one tidy commit — so `main`'s history reads as one commit per
-change, not per work-in-progress step.
+Each feature/fix branches off the latest `main`, and the PR is **merged** back
+into `main` with a merge commit — so every commit on the branch is preserved and
+the merge commit marks where the change landed. Rebase on `main` before merging
+(step 6 below) to keep that history clean and easy to follow.
 
 ## Branch model
 
@@ -47,7 +48,7 @@ change, not per work-in-progress step.
 | `test/<slug>`     | short-lived | `main`        | `main`      | Tests only                                 |
 
 The prefix mirrors the [Conventional Commits](https://www.conventionalcommits.org/)
-type of the change, so the branch name, the commits, and the squash-merge
+type of the change, so the branch name, the commits, and the merge-commit
 subject all agree.
 
 ## Lifecycle of a change
@@ -73,8 +74,9 @@ npm run lint && npm run typecheck && npm test && npm run build
 git push -u origin feat/contact-page
 gh pr create --base main --fill
 
-# 6. CI + at least one approving review must pass, then squash-merge
-gh pr merge --squash --delete-branch
+# 6. CI + at least one approving review must pass. Rebase if behind (below),
+#    then merge — this creates a merge commit that preserves the branch's commits
+gh pr merge --merge --delete-branch
 
 # 7. Sync your local main
 git checkout main
