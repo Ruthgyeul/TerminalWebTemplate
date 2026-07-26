@@ -13,6 +13,7 @@ default) server components.
 | `Prompt`           | A single `user@host:~$ <command>` shell line, optional cursor | no      |
 | `Terminal`         | Interactive fake shell (type a command, get output); logic in `lib/terminal.ts` | **yes** |
 | `ErrorScreen`      | Shared terminal error layout used by 404 / 500 / global-error | no      |
+| `LoadingScreen`    | Shared terminal loading layout used by `loading.tsx` (`fullScreen` toggles embed mode) | no |
 
 ## Conventions
 
