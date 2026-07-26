@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { TerminalBar } from "@/components/TerminalBar";
 import { TerminalWindow } from "@/components/TerminalWindow";
 import { Prompt } from "@/components/Prompt";
+import { Terminal } from "@/components/Terminal";
 import {
   SITE_NAME,
   SITE_DESCRIPTION,
@@ -69,8 +71,25 @@ export default function Home() {
           </div>
         </TerminalWindow>
 
+        <TerminalWindow title="~/console" contentClassName="p-0">
+          <Terminal
+            className="p-5 sm:p-6"
+            intro={[
+              "Interactive shell — try a command.",
+              "Type 'help' to get started.",
+              "",
+            ]}
+          />
+        </TerminalWindow>
+
         <TerminalWindow title="~/links">
           <div className="flex flex-wrap gap-3 text-sm">
+            <Link
+              href="/about"
+              className="card rounded-lg border border-term-border bg-term-panel px-4 py-2 text-term-dim hover:text-term-accent"
+            >
+              About →
+            </Link>
             <a
               href={GITHUB_URL}
               className="card rounded-lg border border-term-border bg-term-panel px-4 py-2 text-term-dim hover:text-term-accent"

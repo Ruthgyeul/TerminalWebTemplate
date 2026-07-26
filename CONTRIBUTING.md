@@ -2,7 +2,9 @@
 
 Thanks for contributing! This document defines the branch, commit, PR and merge
 rules for the project. They exist to keep history readable and `main` always
-releasable.
+releasable. For the strategy behind these rules — the branching model
+visualized, plus the full change lifecycle — see
+[`docs/git-workflow.md`](docs/git-workflow.md).
 
 ## Getting started
 
@@ -18,6 +20,12 @@ Before pushing, run the full local gate (the same checks CI runs):
 ```bash
 npm run lint && npm run typecheck && npm test && npm run build
 ```
+
+## Project docs
+
+Architecture and conventions (for both humans and Claude Code) live under
+[`docs/`](docs/) — see [`docs/README.md`](docs/README.md) for the index. Read
+those before extending the template.
 
 ## Branch rules
 
@@ -61,16 +69,20 @@ Commits follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 - Open PRs against `main`, filling in the PR template.
 - Title uses the same Conventional Commits format as commits — it becomes the
-  squash-merge commit subject.
+  merge commit subject.
 - A PR must pass CI (lint, typecheck, test, build) and get at least one approving
   review before merge.
 - Link related issues (`Closes #NN`). Keep PRs small and reviewable.
 
 ## Merge rules
 
-- **Squash and merge** is the default — one tidy commit per PR keeps `main`
-  linear and each change atomic/revertable.
-- The squash commit message must be a valid Conventional Commit (the PR title).
+- **Create a merge commit** (`gh pr merge --merge`) — the default. It preserves
+  each branch's commits and records an explicit merge point, so `main` shows both
+  the individual work and where each PR landed. (This is why commits must stay
+  focused and green — they are kept, not flattened.)
+- Rebase the branch on the latest `main` before merging
+  (`git fetch origin && git rebase origin/main`) so history stays clean.
+- The merge commit subject must be a valid Conventional Commit (the PR title).
 - Delete the branch after merge.
 - Don't merge your own PR without a passing CI run.
 

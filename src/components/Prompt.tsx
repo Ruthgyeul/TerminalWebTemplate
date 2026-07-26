@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { TERMINAL_HOST, TERMINAL_USER } from "@/config/siteConfig";
+import { PromptLabel } from "@/components/PromptLabel";
 import { cn } from "@/lib/utils";
 
 /**
@@ -22,10 +22,7 @@ export function Prompt({
 }) {
   return (
     <div className={cn("font-mono text-sm text-term-dim", className)}>
-      <span className="text-term-green">
-        {TERMINAL_USER}@{TERMINAL_HOST}
-      </span>
-      <span className="text-term-faint">:{path}$</span>{" "}
+      <PromptLabel path={path} />{" "}
       {command}
       {cursor && <span className="term-cursor ml-1 align-middle" aria-hidden />}
     </div>

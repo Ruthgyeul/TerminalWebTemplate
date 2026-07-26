@@ -9,7 +9,9 @@ default) server components.
 | ------------------ | ------------------------------------------------------------- | ------- |
 | `TerminalBar`      | Sticky top bar with window chrome + shell label, optional git chip | no |
 | `TerminalWindow`   | Framed "terminal window" card (traffic lights + title + body) | no      |
+| `PromptLabel`      | The `user@host:~$` shell prefix — single source of truth reused by the below | no |
 | `Prompt`           | A single `user@host:~$ <command>` shell line, optional cursor | no      |
+| `Terminal`         | Interactive fake shell (type a command, get output); logic in `lib/terminal.ts` | **yes** |
 | `ErrorScreen`      | Shared terminal error layout used by 404 / 500 / global-error | no      |
 
 ## Conventions
