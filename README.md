@@ -94,6 +94,13 @@ deploy to any Node host / platform that supports Next.js 16. The security
 headers and CSP in `next.config.ts` are applied by the Node server, so run it
 with `next start` (not a static export) to keep them.
 
+## Contributing
+
+Branch, commit, PR and merge conventions live in
+[`CONTRIBUTING.md`](CONTRIBUTING.md). In short: branch off `main` as
+`feat/…`·`fix/…`·`docs/…`, use [Conventional Commits](https://www.conventionalcommits.org/),
+and squash-merge green PRs. Issue and PR templates are under `.github/`.
+
 ## Working with Claude Code
 
 This repo includes `CLAUDE.md` files (root, `src/`, `src/components/`) describing
