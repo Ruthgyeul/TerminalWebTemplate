@@ -2,7 +2,9 @@
 
 Thanks for contributing! This document defines the branch, commit, PR and merge
 rules for the project. They exist to keep history readable and `main` always
-releasable.
+releasable. For the strategy behind these rules — the branching model
+visualized, plus the full change lifecycle — see
+[`docs/git-workflow.md`](docs/git-workflow.md).
 
 ## Getting started
 
