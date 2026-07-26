@@ -101,14 +101,16 @@ Branch, commit, PR and merge conventions live in
 `feat/…`·`fix/…`·`docs/…`, use [Conventional Commits](https://www.conventionalcommits.org/),
 and merge green PRs with a merge commit. Issue and PR templates are under `.github/`.
 
-## Working with Claude Code
+## Working with AI agents
 
 This repo keeps its AI/contributor guidance under [`docs/`](docs/) —
 [`claude-project.md`](docs/claude-project.md) (project-wide),
 [`claude-src.md`](docs/claude-src.md) (`src/`), and
-[`claude-components.md`](docs/claude-components.md) (`src/components/`). The root
-`CLAUDE.md` imports them so Claude Code loads the context automatically. Start
-there when extending the template.
+[`claude-components.md`](docs/claude-components.md) (`src/components/`). **Any AI
+agent (or contributor) should read these before starting work.** The root
+[`CLAUDE.md`](CLAUDE.md) imports them so Claude Code loads the context
+automatically; every other tool (Cursor, Copilot, Codex, …) is pointed at the
+same guidance by [`AGENTS.md`](AGENTS.md).
 
 ## License
 
