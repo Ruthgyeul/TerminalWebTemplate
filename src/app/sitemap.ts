@@ -10,12 +10,21 @@ import { SITE_URL } from "@/config/siteConfig";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return [
-    {
-      url: `${SITE_URL}/`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 1,
-    },
+  // Public routes, relative to SITE_URL. Add a line per page (or map over a
+  // data source) as the site grows; `priority` is relative importance (home = 1).
+  const routes: Array<{
+    path: string;
+    changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+    priority: number;
+  }> = [
+    { path: "/", changeFrequency: "monthly", priority: 1 },
+    { path: "/about", changeFrequency: "yearly", priority: 0.8 },
   ];
+
+  return routes.map(({ path, changeFrequency, priority }) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+  }));
 }
