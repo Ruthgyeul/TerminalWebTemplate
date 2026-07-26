@@ -19,6 +19,12 @@ Before pushing, run the full local gate (the same checks CI runs):
 npm run lint && npm run typecheck && npm test && npm run build
 ```
 
+## Project docs
+
+Architecture and conventions (for both humans and Claude Code) live under
+[`docs/`](docs/) — see [`docs/README.md`](docs/README.md) for the index. Read
+those before extending the template.
+
 ## Branch rules
 
 - **Never commit directly to `main`.** `main` is protected and only changes via
