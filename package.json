@@ -30,7 +30,7 @@
     "postcss": "^8.5.22",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.7.3",
-    "vitest": "^3.2.7"
+    "vitest": "^4.1.10"
   },
   "//overrides": "Force patched transitive deps that upstream still pins to vulnerable versions. Backward-compatible bumps; revisit when upstream ships them itself.",
   "overrides": {
